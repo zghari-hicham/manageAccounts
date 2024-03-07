@@ -1,0 +1,48 @@
+<aside class="md:w-50 md:w-64 h-screen p-3">
+  <ul class="w-full flex flex-col gap-2">
+    <li class="px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out <% if (currentPage=="welcome") { %>
+         bg-violet-600  text-white
+        <% } %>">
+      <a href="/"><i class="fa-solid fa-house-chimney font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">welcome</span></a>
+    </li>
+
+    <li class="px-2 py-3 rounded-xl cursor-pointer text-slate-600 text-slate-600  hover:bg-violet-600 hover:text-white  transition ease-in-out <% if (currentPage=="index") { %>
+         bg-violet-600 text-white
+        <% } %>">
+      <a href="/index.html"><i class="fa-solid fa-border-all f font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">dashboard</span></a>
+    </li>
+
+    <li class="px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out <% if (currentPage=="add") { %>
+         bg-violet-600 text-white
+        <% } %>">
+      <a href="/add.html" class=""><i class="fa-solid fa-file-circle-plus font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">add Accs</span></a>
+    </li>
+
+    <li class="  px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out">
+      <a href="" class=""><i class="fa-solid fa-people-group f font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">team </span></a>
+    </li>
+
+    <li class=" px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out">
+      <a href="" class=""><i class="fa-regular fa-pen-to-square f font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">feedback</span></a>
+    </li>
+    <li class=" px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out">
+      <a href="" class=""><i class="fa-solid fa-globe font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">social media</span></a>
+    </li>
+    <li class=" px-2 py-3 rounded-xl cursor-pointer text-slate-600 hover:bg-violet-600 hover:text-white transition ease-in-out">
+      <a href="" class=""><i class="fa-solid fa-sliders f font-semibold text-xl me-3"></i>
+        <span class="capitalize hidden md:inline">setting</span></a>
+    </li>
+    <li class=" px-2 py-3 mt-20 rounded-xl cursor-pointer hover:text-white">
+
+      <a href="" class="text-gray-400"><i class=" fa-brands fa-facebook font-semibold text-xl text-red-300 me-3"></i>
+        </a>
+
+    </li>
+  </ul>
+</aside>

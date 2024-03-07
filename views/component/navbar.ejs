@@ -1,0 +1,60 @@
+<nav class="flex justify-between py-5 px-10 shadow">
+  <!-- first party -->
+  <div class="first-party navbrand flex items-center gap-20">
+    <div class="navbrand flex items-center gap-2">
+      <i class="fa-solid fa-microchip w-6 h-6 rounded-full flex justify-center items-center bg-sky-600 text-white text-xl"></i>
+      <span class="uppercase font-semibold">zagarov</span>
+    </div>
+    <!-- search  section -->
+
+
+    <form action="/search" method="post" class="border flex items-center gap-2">
+
+      <input
+       class="appearance-none rounded w-full py-3 px-4 text-gray-700 leading-normal focus:outline-none focus:shadow" 
+       type="search" placeholder="Search here..."  name="searchvalue"
+       
+       />
+      <button type="submit">
+        <i class="fa-solid fa-magnifying-glass  text-2xl right-0 text-green-500  cursor-pointer "></i>
+    </button>
+
+    </form>
+
+
+
+
+
+  </div>
+
+  <!-- second party nav -->
+  <div class="second-party flex items-center gap-20">
+    <!-- notification -->
+    <div class="notificaico">
+      <i class="fa-regular fa-bell text-2xl"></i>
+    </div>
+
+    <div class="user flex items-center gap-3">
+      <div class="user-info flex items-center gap-2">
+        <img src="https://i.pinimg.com/564x/a2/7f/a1/a27fa1898256ae4d5dccecee9e3823c7.jpg" alt="" width="50" height="50" class="rounded-full" />
+        <div class="username text-center">
+          <p class="font-bold capitalize"><% if (UserInfo!==null) { %>
+           <%= UserInfo.username %>
+          <% }else{ %>user <% } %></p>
+          <p class="text-gray-400 capitalize">frontend Dev</p>
+        </div>
+      </div>
+
+      <div class="icondropdown border border-neutral-400 rounded-full w-5 h-5 flex items-center justify-between cursor-pointer">
+        <i class="fa-solid fa-angle-down text-sm w-100 text-slate-400 mx-auto my-auto"></i>
+
+        <ul class="dropdownMenu shadow">
+          <li><a href=""><i class="fa-solid fa-circle-exclamation text-emerald-400"></i> user info</a></li>
+          <li><a href=""><i class="fa-solid fa-image text-blue-300 "></i> profile image</a></li>
+          <li><a href="/signout"><i class="fa-solid fa-arrow-right-from-bracket f text-red-300 "></i> log out </a></li>
+          <li><a href=""><i class="fa-regular fa-trash-can text-red-300 "></i> delete </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

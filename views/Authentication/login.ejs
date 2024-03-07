@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="flex    justify-between py-5 px-10 shadow">
+    <!-- first party -->
+    <div class="first-party navbrand flex items-center gap-20">
+      <div class="navbrand flex items-center gap-2">
+        <i class="fa-solid fa-microchip w-6 h-6 rounded-full flex justify-center items-center bg-sky-600 text-white text-xl"></i>
+        <span class="uppercase font-semibold">zagarov</span>
+      </div>
+      <!-- search  section -->
+      <div class="searchinput flex items-center relative">
+        <input class="appearance-none rounded w-full py-3 px-4 text-gray-700 leading-normal focus:outline-none focus:shadow" type="search" placeholder="Search here..." />
+        <i class="fa-solid fa-magnifying-glass absolute text-2xl right-0 text-gray-400 cursor-pointer"></i>
+      </div>
+    </div>
+
+    <!-- second party nav -->
+    <div class="second-party flex items-center gap-20">
+      <!-- notification -->
+      <div class="notificaico">
+        <i class="fa-regular fa-bell text-2xl"></i>
+      </div>
+
+      <div class="user flex items-center gap-3">
+        <div class="user-info flex items-center gap-2">
+          <img src="https://i.pinimg.com/564x/a2/7f/a1/a27fa1898256ae4d5dccecee9e3823c7.jpg" alt="" width="50" height="50" class="rounded-full" />
+          <div class="username text-center">
+            <p class="font-bold capitalize">zghari hicham</p>
+            <p class="text-gray-400 capitalize">frontend Dev</p>
+          </div>
+        </div>
+
+        <div class="icondropdown border border-neutral-400 rounded-full w-5 h-5 flex items-center justify-between cursor-pointer">
+          <i class="fa-solid fa-angle-down text-sm w-100 text-slate-400 mx-auto my-auto"></i>
+
+          <ul class="dropdownMenu shadow">
+            <li><a href="">user info</a></li>
+            <li><a href="">profile image</a></li>
+            <li><a href="">delete </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="flex">
+    <!-- sidbare  imported from component folder=====
+        ====================================-->
+    <%- include('../component/sidebar.ejs',{currentPage:"login"}) %>
+
+    <!-- content -->
+
+    <div class="container p-3 welcome mx-auto  flex flex-col gap-2 items-center justify-center  rounded-tl-3xl ">
+
+
+      <form id="loginForm"  class="w-96 flex flex-col gap-4 ">
+        <div >
+          <h3 class="text-4xl capitalize">welcome back 👋 !</h3>
+          <p class="text-gray-400 capitalize text-sm">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div  class="flex flex-col">
+            <label class="capitalize"  for="username">email</label>
+            <input class="h-12 outline-none border p-3 rounded" type="email" placeholder="enter email" id="loginEmail" name="email">
+            <span class="text-red-400" id="emailLoginErr"></span>
+        </div>
+        <div class="flex flex-col"> 
+             <label class="capitalize" for="password">password</label>
+            <input class="h-12 outline-none border p-3 rounded" type="password" placeholder="enter password" id="LoginPassword" name="password">
+           <span class="text-red-400" id="passwordLoginErr"></span>
+          </div>
+     <span class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            
+            <input class="w-6 h-6" type="checkbox" name="" id="">
+            <label for="">remember me</label>
+        </div>
+          <a href="" class="text-blue-600 underline decoration-blue-400 capitalize">forgot password?</a>
+        </span>
+        <button class="w-full bg-violet-600 h-12 text-white font-semibold capitalize rounded">login</button>
+        <a href="/register" class="text-blue-600 underline decoration-blue-400 capitalize">create account ?</a>
+      </form>
+
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
+  <!-- footer imported from component========== -->
+  <%- include('../component/footer.ejs') %>
+
+
+
+  <script>
+
+let loginEmail=document.getElementById('loginEmail');
+let LoginPassword=document.getElementById('LoginPassword');
+let passwordLoginErr=document.getElementById('passwordLoginErr');
+ let emailLoginErr=document.getElementById('emailLoginErr')
+   loginForm.addEventListener('submit' , async(eo) => {
+    eo.preventDefault()
+    LoginPassword.textContent=""
+    loginEmail.textContent=""
+
+    console.log('clicked')
+
+    const res = await fetch("/login", {
+  method: "POST",
+  body: JSON.stringify({email: loginEmail.value , password: LoginPassword.value }),
+  headers: { "Content-Type": "application/json" },
+});
+
+    const data = await res.json();
+
+    console.log(data)
+    if(data.emailNotExist){
+      emailLoginErr.textContent= data.emailNotExist
+    }
+    if(data.wrongPass){
+      passwordLoginErr.textContent=data.wrongPass
+    }
+    if(data.id){
+      location.assign('/')
+    }
+   })
+  </script>
+</body>
+
+</html>

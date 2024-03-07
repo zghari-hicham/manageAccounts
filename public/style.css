@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a{
+    text-decoration: none;
+
+}
+ul{
+    list-style-type: none;
+
+}
+th,td{
+    border: 1px solid rgb(228, 223, 223);
+    height: 50px;
+}
+
+
+nav .notificaico {
+position: relative;
+}
+nav .notificaico::before{
+position: absolute;
+content: "2";
+font-size: 14px;
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background-color: #7c3aed;
+top: -10px;
+right: -10px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+}
+
+
+.icondropdown{
+    position: relative;
+}
+
+.icondropdown .dropdownMenu{
+    position: absolute;
+    height: fit-content;
+    width: 200px;
+
+    top: 41px;
+    right: 0px;
+    background-color:white ;
+    border-radius: 4px;
+    
+}
+.icondropdown .dropdownMenu li{
+    padding: 5px 20px;
+    text-transform: capitalize;
+}
+
+.icondropdown .dropdownMenu li:hover{
+    
+    background-color:#7c3aedc2;
+    color: white;
+}
+
+
+
+
+
+
+.carditem{
+background-color: white;
+position: relative;
+cursor: pointer;
+}
+
+
+.carditem .card-links{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    right: 0;
+    background-color: #fb7186fd;
+    border-radius: 24px;
+   
+ 
+    
+}
+.carditem:hover > .card-links{
+    transition: .4s linear all;
+   height: 100%;
+    }
+    .card-links a{
+        display: none;
+    }
+    .carditem:hover > .card-links a{
+        display: block;
+    }
+
+    .carditem:hover > .header{
+        display: none;
+    }
+    
+
+
+
+    /* add page */
+
+    .addcostumer{
+        padding: 20px;
+    }
+    .addcostumer form label{
+        text-transform: capitalize;
+    }
+    .addcostumer form input{
+        width: 400px;
+        height: 50px;
+        padding: 5px;
+        border-radius: 4px;
+    }
+    .addcostumer form textarea{
+        padding: 10px;
+        width: 500px;
+    }
+
+    .addcostumer form input:focus{
+        outline: 1px solid #834ce0ad;
+    }
+    .addcostumer form textarea:focus{
+        border-radius: 8px;
+        outline: 1px solid #b899eead;
+    }
+
+    .addcostumer form button{
+        width: 150px;
+        height: 45px;
+        padding: 5px;
+        background-color: #7c3aed;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        font-size: large;
+        color: white;
+        text-transform: capitalize;
+
+    }
+
+
+    .addcostumer form button:hover{
+        transition: .4s linear all;
+        background-color: #9256f8b6;
+    }
+    /* welcome page */
+
+
+
+    .welcome{
+        background-image: linear-gradient(#f0f9ff , #9256f850 ) ;
+    }
+
+    
+    .welcome .btns button{
+        background: rgb(2,0,36);
+background: linear-gradient(90deg, rgb(197, 15, 214) 10%, #7c3aed 80%);
+    }
+
+
+    /* styling items details page */
+
+    .items-details .display-data {
+        width:80%;
+        height: 200px;
+        position: relative;
+        margin: auto;
+        margin-top: 50px;
+
+    }
+    .items-details .display-data  textarea{
+        width: 100%;
+        height: 100%;
+        padding: 7px;
+        border-radius: 6px;
+        outline: none;
+    }
+    .items-details .display-data  textarea:focus{
+        border: 1px solid #7c3aed6c ;
+    }
+    .items-details .display-data .copieicon{
+        border-radius: 8px;
+        position: absolute;
+        padding: 5px;
+        bottom: 5px;
+        right: 5px;
+
+    }
+
+
+
+    /* footer  */
+
+
+   
